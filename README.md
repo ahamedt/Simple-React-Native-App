@@ -6,3 +6,12 @@ NOTE: This is a really barebones app and a lot of work needs to be done on the s
 This is basically a simple react native app I made as part of the Dev Team in PennApps. It uses the newsapi.org News API to get a list of news articles based on how prominent (breaking news) they are. Users can tap/click on a headline and then it will take them to a detail page that will show them more info, such as the title, description, author, and url of the article. They can also go to an About page by swiping right. Will add an icon that indicates that.
 
 
+Instructions on running the app:
+
+Open on a text editor (I used VS Code). 
+Go to terminal and directory of the app
+
+run expo start or npm start
+(This should open up a localhost link in your browser)
+
+Using expo, you can open up in a simulator of your choice (I used iOS simulator for the duration of the project development).
