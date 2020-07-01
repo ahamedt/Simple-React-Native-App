@@ -6,7 +6,7 @@ export default function Home({navigation}) {
 
 const URL = 'http://newsapi.org/v2/top-headlines?' +
 'country=us&' +
-'apiKey=I TOOK OUT THE API KEY';
+'apiKey=b4f92e0bac40405fb6ce51d66dedebde';
 
 const [articles, setArticles] = useState([]);
 const [isLoading, setLoading] = useState(true);
