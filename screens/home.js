@@ -6,7 +6,7 @@ export default function Home({navigation}) {
 
 const URL = 'http://newsapi.org/v2/top-headlines?' +
 'country=us&' +
-'apiKey=b4f92e0bac40405fb6ce51d66dedebde';
+'apiKey=I TOOK OUT THE API KEY';
 
 const [articles, setArticles] = useState([]);
 const [isLoading, setLoading] = useState(true);
@@ -22,25 +22,6 @@ useEffect(() => {
 
 }, []);
 
-/*const [isLoading, setLoading] = useState(true);
-const [movies, setMovies] = useState([]);
-*/
-
-
-/*useEffect(() => {
-    fetch('https://reactnative.dev/movies.json')
-      .then((response) => response.json())
-      .then((json) => setMovies(json.movies))
-      .catch((error) => console.error(error))
-      .finally(() => setLoading(false));
-  }, []);
-
-/*const [reviews, setReviews] = useState([
-    {title : 'interstellar', rating: 5, body:'buerf', key:'1'},
-    {title : 'dark knight', rating: 5, body:'buerf', key:'2'},
-    {title : 'spider-man', rating: 5, body:'buerf', key:'3'},
-    {title : 'the martian', rating: 5, body:'buerf', key:'4'},
-]);*/
 
 const pressHandler = () => {
     navigation.navigate('ReviewDetail');
