@@ -1,6 +1,7 @@
 import React , {useState, useEffect} from 'react';
 import {StyleSheet, View, Text, FlatList,TouchableOpacity, SafeAreaView, ActivityIndicator} from 'react-native';
 import {globalStyles} from '../styles/global'
+import AddArticle from './addArticle'
 
 export default function Home({navigation}) {
 
@@ -22,33 +23,32 @@ useEffect(() => {
 
 }, []);
 
-/*const [isLoading, setLoading] = useState(true);
-const [movies, setMovies] = useState([]);
-*/
+const submitHandler = (title, date,author, description) =>{
 
 
-/*useEffect(() => {
-    fetch('https://reactnative.dev/movies.json')
-      .then((response) => response.json())
-      .then((json) => setMovies(json.movies))
-      .catch((error) => console.error(error))
-      .finally(() => setLoading(false));
-  }, []);
+    setArticles((prevArticles) =>{
+        return [
+            {title:title, date:date,author:author, description:description, key: Math.random().toString()},
+            ...prevArticles
+        ]
+    })
+}
+/*const [userArticles, setUserArticles] = useState({
+    author: 'bruh', title:'bruh moment', description:'hmmm', key:'1'}
 
-/*const [reviews, setReviews] = useState([
-    {title : 'interstellar', rating: 5, body:'buerf', key:'1'},
-    {title : 'dark knight', rating: 5, body:'buerf', key:'2'},
-    {title : 'spider-man', rating: 5, body:'buerf', key:'3'},
-    {title : 'the martian', rating: 5, body:'buerf', key:'4'},
-]);*/
+)
+
 
 const pressHandler = () => {
     navigation.navigate('ReviewDetail');
     
-}
+}*/
 return(
     <View style = {globalStyles.container}>
     <SafeAreaView>
+        <View>
+            <AddArticle submitHandler={submitHandler}/>
+        </View>
         {isLoading ? <ActivityIndicator/> : (
         <FlatList
         data={articles}
@@ -62,9 +62,22 @@ return(
         }
         
         />
+       /* <FlatList
+        data = {userArticles}
+        renderItem = { ({item}) => (
+            <TouchableOpacity onPress={() =>navigation.navigate('ReviewDetail', item)}>
+                <Text style = {globalStyles.item}> {item.title} </Text>
+            </TouchableOpacity>
+        )
+        }
+
+        />
+
+        )}*/
         )}
      </SafeAreaView>
-    </View>
+     </View>
+    
 )
 
 }
