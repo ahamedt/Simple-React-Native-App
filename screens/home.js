@@ -23,7 +23,7 @@ useEffect(() => {
 
 }, []);
 
-<<<<<<< HEAD
+
 const submitHandler = (title, date,author, description) =>{
 
 
@@ -39,8 +39,6 @@ const submitHandler = (title, date,author, description) =>{
 
 )
 
-=======
->>>>>>> 1410b168a87401cc4a53e69b41395dc3995b86d9
 
 const pressHandler = () => {
     navigation.navigate('ReviewDetail');
